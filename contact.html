@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+    else{
+    	alert("valid e-mail address");
+    }
+}
+</script>
+<style type="text/css">
+	.center{
+		text-align: center;
+		position: relative;
+		top:250px;
+		background-color: white;
+		width: 50%;
+		margin: 0 auto;
+		height: 300px;
+	}
+</style>
+</head>
+<body background="file:///C:/Users/SystemEntropy/Desktop/programs/image/images.png">
+<div class="center">
+	<div style="text-align: center; margin: 0 auto;">
+	<form name="myForm" action="" onsubmit="return validateForm();" method="post" >
+	<fieldset>
+		Name:<input type="text" name="name"/>
+		<br>
+		Email:<input type="text" name="email">
+		<br>
+		Message:<br>
+		<textarea rows="5" cols="50" name="message">
+		</textarea>
+		<br>
+	<input type="submit" value="create profile">
+	</fieldset>
+	</form>
+	</div>
+</div>
+</body>
+</html>
